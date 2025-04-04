@@ -2,22 +2,22 @@
 
 const express = require('express');
 const recipeController = require('../controllers/recipeController');
-// const authMiddleware = require('../middleware/authMiddleware');
+const verifyAccessToken = require('../middlewares/verifyAccessToken');
+
 const recipeRouter = express.Router();
 
-// Основные CRUD операции для рецептов
-recipeRouter.get('/', recipeController.getAllRecipes);
-// recipeRouter.post('/', recipeController.createRecipe); // authMiddleware,
-// recipeRouter.get('/:recipeId', recipeController.getRecipeById);
-// recipeRouter.put('/:recipeId', recipeController.updateRecipe); // authMiddleware,
-// recipeRouter.delete('/:recipeId', recipeController.deleteRecipe); // authMiddleware,
 
-// // Специфичные роуты для рецептов
-// recipeRouter.get('/user/me', recipeController.getUserRecipes); // authMiddleware,
-// recipeRouter.get('/search/title', recipeController.searchRecipesByTitle);
-// recipeRouter.get(
-//   '/search/ingredients',
-//   recipeController.searchRecipesByIngredients,
-// );
+recipeRouter.get('/',verifyAccessToken, recipeController.getAllRecipes);
+recipeRouter.post('/', verifyAccessToken,recipeController.createRecipe); 
+recipeRouter.get('/:recipeId', recipeController.getRecipeById);
+recipeRouter.put('/:recipeId',verifyAccessToken, recipeController.updateRecipe); 
+recipeRouter.delete('/:recipeId',verifyAccessToken, recipeController.deleteRecipe); 
+
+recipeRouter.get('/user/me',verifyAccessToken, recipeController.getUserRecipes); 
+recipeRouter.get('/search/title', recipeController.searchRecipesByTitle);
+recipeRouter.get(
+  '/search/ingredients',
+  recipeController.searchRecipesByIngredients,
+);
 
 module.exports = recipeRouter;
