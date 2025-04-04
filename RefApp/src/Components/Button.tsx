@@ -64,7 +64,7 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
   },
   contained: {
-    backgroundColor: '#007AFF',
+    backgroundColor: 'green',
   },
   text: {
     backgroundColor: 'transparent',
@@ -73,12 +73,12 @@ const styles = StyleSheet.create({
     opacity: 0.6,
   },
   buttonText: {
-    color: '#fff',
+    color: 'black',
     fontSize: 16,
     fontWeight: 'bold',
   },
   textButton: {
-    color: '#007AFF',
+    color: 'black',
     fontSize: 14,
   },
 });

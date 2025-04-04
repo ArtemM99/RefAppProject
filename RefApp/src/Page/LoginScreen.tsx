@@ -93,6 +93,7 @@ const styles = StyleSheet.create({
   },
   button: {
     marginTop: 16,
+    
   },
   registerButton: {
     marginTop: 12,

@@ -9,11 +9,19 @@ export default function HomeScreen() {
 
   return (
     <View style={styles.container}>
-      <Text style={styles.title}>Добро пожаловать!</Text>
-      <Button onPress={() => navigation.navigate('Login')}> Выйти </Button>
+      <Text style={styles.title}>{'\u{1F34B}'}</Text>
+      {/* <Button onPress={() => navigation.navigate('Login')}> Выйти </Button> */}
     </View>
   );
 }
+
+
+
+
+
+
+
+
 
 const styles = StyleSheet.create({
   container: {
